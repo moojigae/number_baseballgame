@@ -19,7 +19,7 @@ time, mark, audio, video /* * : 전체선택자*/ {
   padding: 0;
   border: 0;
   font-size: 1em;
-  font-family: inherit;
+  font-family: 'Black Han Sans', sans-serif;
   vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */ /* 모르는 태그가 나오면 inline요소처리하는데, 해당 태그들를 block 요소로 만들어줌 */
@@ -50,22 +50,31 @@ ul {
 .main {
   display: block;
   margin: 0 auto;
+  padding-top: 50px;
   text-align: center;
 }
 /* 타이틀  */
-.main_title {
+.main-title {
   font-size: 3em;
   font-family: 'Black Han Sans', sans-serif;
 }
 
 /* 숫자가 들어올 input상자 레이아웃 */
-.input-box_digit{
-
+.input-box{
+  margin-top: 20px;
+}
+.input-box-digit, .input-box-try, .input-box-reset{
+  line-height: 30px;
+  margin: 0 5px;
+}
+.input-box-digit{
+  width: 3em;
+  height: 3em;
 }
 /* 도전, 한번 더 버튼 레이아웃 */
-.input-box_try, .input-box_reset{
-
+.input-box-try, .input-box-reset{
+  font-size: 1.4rem;
 }
-.input-box_reset{
+.input-box-reset{
 
 }
