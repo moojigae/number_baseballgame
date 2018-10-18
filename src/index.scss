@@ -1,5 +1,71 @@
-$main-color: skyblue;
+@charset "utf-8";
+@import url("https://fonts.googleapis.com/css?family=Black+Han+Sans");
 
-body {
-  background-color: $main-color;
+/* 스타일 초기화 */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+/* fieldset,*/ form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video /* * : 전체선택자*/ {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 1em;
+  font-family: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */ /* 모르는 태그가 나오면 inline요소처리하는데, 해당 태그들를 block 요소로 만들어줌 */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+main {
+  display: block;
+}
+ul {
+  list-style-type: none;
+}
+
+// 레이아웃
+.wrapper{
+  background-color: #405d27;
+  height: 100vh;
+  width: 100%;
+}
+.main {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+/* 타이틀  */
+.main_title {
+  font-size: 3em;
+  font-family: 'Black Han Sans', sans-serif;
+}
+
+/* 숫자가 들어올 input상자 레이아웃 */
+.input-box_digit{
+
+}
+/* 도전, 한번 더 버튼 레이아웃 */
+.input-box_try, .input-box_reset{
+
+}
+.input-box_reset{
+
 }
