@@ -1,15 +1,12 @@
-
-const turnList = document.querySelector(".turn-list");
-
 // 시도 버튼에 클릭 이벤트가 일어났을 때
 const tryButton = document.querySelector(".input-box-try");
 
 tryButton.addEventListener("click", e => {
   // div 생성 후 'turn-list'에 붙여준다
-  let turnListItemEl = document.createElement("div");
-  turnListItemEl.classList.add("turn-items");
-  turnList.appendChild(turnListItemEl);
-  // turn-items밑의 하위 div 4개
+  const TurnListEl = document.querySelector(".turn-list");
+  const TurnListItemEl = document.createElement("div");
+  TurnListEl.appendChild(TurnListItemEl);
+
 });
 
 // 한번 더 버튼에 클릭 이벤트가 일어났을 때
@@ -17,17 +14,19 @@ tryButton.addEventListener("click", e => {
 
 // resetButton.addEventListener("click", e => {});
 
-let tryNum = [4, 5, 6]; // 시도 숫자 테스트 케이스
-const answer = [6, 6, 3]; // 실제 정답
+let tryNum = [4, 3, 1]; // 시도 숫자 테스트 케이스
+const answer = [1, 2, 3]; // 실제 정답
 const tryNumSize = tryNum.length;
 
 // 시도 횟수 한번 판단 함수
 function oneGame() {
   const strike = howManyStrike();
   const ball = howManyBall();
-  if (strike === 3) { // 스트라이크가 3이면 즈어어엉답!!
+  if (strike === 3) {
+    // 스트라이크가 3이면 즈어어엉답!!
     console.log("즈어어엉답!!");
-  } else { // 정답이 아니면 strike 와 ball 횟수 출력
+  } else {
+    // 정답이 아니면 strike 와 ball 횟수 출력
     console.log(strike + " strike");
     console.log(ball + " ball");
   }
@@ -41,7 +40,8 @@ function oneGame() {
 function howManyStrike() {
   let strike = 0;
   for (let i = 0; i < tryNumSize; i++) {
-    if (tryNum[i] === answer[i]) { // 첫번째 자리, 두번째 자리, 세번째 자리 차례차례 비교해서 같을때마다 strike 1씩 증가.
+    if (tryNum[i] === answer[i]) {
+      // 첫번째 자리, 두번째 자리, 세번째 자리 차례차례 비교해서 같을때마다 strike 1씩 증가.
       strike++;
       tryNum[i] = NaN; // ball 판별시 중복을 막기 위해 자리를 NaN으로 바꿔줌.
     }
@@ -54,7 +54,8 @@ function howManyBall() {
   let ball = 0;
   for (let i = 0; i < tryNumSize; i++) {
     for (let j = 0; j < tryNumSize; j++) {
-      if (tryNum[i] === answer[j]) { // 시도숫자의 첫번째 자리가 정답 숫자 세자리 중 일치하는게 있는지 확인. 그 다음 시도 숫자 두번째 자리 확인. 세번째 자리 확인.
+      if (tryNum[i] === answer[j]) {
+        // 시도숫자의 첫번째 자리가 정답 숫자 세자리 중 일치하는게 있는지 확인. 그 다음 시도 숫자 두번째 자리 확인. 세번째 자리 확인.
         ball++;
         break; // 볼이 중복으로 세어지는 것 방지를 위한 break.
       }
