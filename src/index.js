@@ -1,12 +1,32 @@
 // 시도 버튼에 클릭 이벤트가 일어났을 때
 const tryButton = document.querySelector(".input-box-try");
+const inputBoxDigit1 = document.querySelector(".input-box-digit-1");
+const inputBoxDigit2 = document.querySelector(".input-box-digit-2");
+const inputBoxDigit3 = document.querySelector(".input-box-digit-3");
 
 tryButton.addEventListener("click", e => {
   // div 생성 후 'turn-list'에 붙여준다
-  const TurnListEl = document.querySelector(".turn-list");
-  const TurnListItemEl = document.createElement("div");
-  TurnListEl.appendChild(TurnListItemEl);
+  const turnListEl = document.querySelector(".turn-list");
+  const turnListItemEl = document.createElement("div");
+  turnListItemEl.classList.add("list-items");
+  turnListEl.appendChild(turnListItemEl);
+  const round = document.createElement("span");
+  round.textContent = "1회";
+  turnListItemEl.appendChild(round);
 
+  // 연습
+  let inputBoxEl = inputBoxDigit1.cloneNode()
+  turnListItemEl.appendChild(inputBoxEl);
+  inputBoxEl = inputBoxDigit2.cloneNode()
+  turnListItemEl.appendChild(inputBoxEl);
+  inputBoxEl = inputBoxDigit3.cloneNode()
+  turnListItemEl.appendChild(inputBoxEl);
+  // const inputBoxEl = document.createElement("input");
+  // inputBoxEl.setAttribute("type", "input");
+
+
+  // console.log(inputBoxDigit1.value)
+  e.preventDefault();
 });
 
 // 한번 더 버튼에 클릭 이벤트가 일어났을 때
